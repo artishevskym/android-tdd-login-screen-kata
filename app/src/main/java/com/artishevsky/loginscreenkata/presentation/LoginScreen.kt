@@ -11,6 +11,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.artishevsky.loginscreenkata.R
+import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.EMAIL_TEXT_FIELD_TAG
+import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.PASSWORD_TEXT_FIELD_TAG
+import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.REPEAT_PASSWORD_TEXT_FIELD_TAG
 import com.artishevsky.loginscreenkata.ui.theme.LoginScreenKataTheme
 
 @Composable
@@ -32,7 +35,7 @@ fun LoginScreen() {
                     onValueChange = {},
                     modifier = Modifier
                         .fillMaxWidth()
-                        .testTag("emailTextField"),
+                        .testTag(EMAIL_TEXT_FIELD_TAG),
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 TextField(
@@ -40,19 +43,25 @@ fun LoginScreen() {
                     onValueChange = {},
                     modifier = Modifier
                         .fillMaxWidth()
-                        .testTag("passwordTextField")
+                        .testTag(PASSWORD_TEXT_FIELD_TAG)
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 TextField(
-                    value = stringResource(R.string.login_repeated_password_text),
+                    value = stringResource(R.string.login_repeat_password_input_text),
                     onValueChange = {},
                     modifier = Modifier
                         .fillMaxWidth()
-                        .testTag("repeatedPasswordTextField")
+                        .testTag(REPEAT_PASSWORD_TEXT_FIELD_TAG)
                 )
             }
         }
     }
+}
+
+internal object LoginScreenElement {
+    const val EMAIL_TEXT_FIELD_TAG = "emailTextField"
+    const val PASSWORD_TEXT_FIELD_TAG = "passwordTextField"
+    const val REPEAT_PASSWORD_TEXT_FIELD_TAG = "repeatPasswordTextField"
 }
 
 @Preview(showBackground = true)
