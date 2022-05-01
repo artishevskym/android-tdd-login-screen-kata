@@ -1,11 +1,14 @@
 package com.artishevsky.loginscreenkata.presentation
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import com.artishevsky.loginscreenkata.ui.theme.LoginScreenKataTheme
 
@@ -18,6 +21,13 @@ fun LoginScreen() {
             color = MaterialTheme.colors.background
         ) {
             Greeting("Android")
+            TextField(
+                value = "Email",
+                onValueChange = {},
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("emailTextField"),
+            )
         }
     }
 }
