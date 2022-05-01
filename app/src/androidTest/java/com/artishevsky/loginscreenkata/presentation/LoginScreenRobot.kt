@@ -14,7 +14,7 @@ internal class LoginScreenRobot(
 
     private val emailInput by lazy { composeTestRule.onNodeWithTag("emailTextField") }
     private val passwordInput by lazy { composeTestRule.onNodeWithTag("passwordTextField") }
-    private val repeatedPasswordInput by lazy { composeTestRule.onNodeWithTag("repeatedTextField") }
+    private val repeatedPasswordInput by lazy { composeTestRule.onNodeWithTag("repeatedPasswordTextField") }
 
     fun isEmailInputDisplayed() = emailInput
         .assertIsDisplayed()

@@ -42,6 +42,14 @@ fun LoginScreen() {
                         .fillMaxWidth()
                         .testTag("passwordTextField")
                 )
+                Spacer(modifier = Modifier.height(16.dp))
+                TextField(
+                    value = stringResource(R.string.login_repeated_password_text),
+                    onValueChange = {},
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .testTag("repeatedPasswordTextField")
+                )
             }
         }
     }
