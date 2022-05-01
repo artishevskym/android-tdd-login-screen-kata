@@ -1,9 +1,6 @@
 package com.artishevsky.loginscreenkata.presentation
 
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -25,22 +22,29 @@ fun LoginScreen() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colors.background
         ) {
-            Greeting("Android")
-            TextField(
-                value = stringResource(R.string.login_email_input_text),
-                onValueChange = {},
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .testTag("emailTextField"),
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            TextField(
-                value = stringResource(R.string.login_password_input_text),
-                onValueChange = {},
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .testTag("passwordTextField")
-            )
+                    .fillMaxSize()
+                    .padding(32.dp),
+                verticalArrangement = Arrangement.Center
+            ) {
+                Greeting("Android")
+                TextField(
+                    value = stringResource(R.string.login_email_input_text),
+                    onValueChange = {},
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .testTag("emailTextField"),
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                TextField(
+                    value = stringResource(R.string.login_password_input_text),
+                    onValueChange = {},
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .testTag("passwordTextField")
+                )
+            }
         }
     }
 }
