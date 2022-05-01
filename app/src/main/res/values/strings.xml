@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Login Screen Kata</string>
+    <string name="login_email_input_text">Email</string>
 </resources>

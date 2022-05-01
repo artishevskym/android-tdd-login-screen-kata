@@ -9,7 +9,9 @@ import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.artishevsky.loginscreenkata.R
 import com.artishevsky.loginscreenkata.ui.theme.LoginScreenKataTheme
 
 @Composable
@@ -22,7 +24,7 @@ fun LoginScreen() {
         ) {
             Greeting("Android")
             TextField(
-                value = "Email",
+                value = stringResource(R.string.login_email_input_text),
                 onValueChange = {},
                 modifier = Modifier
                     .fillMaxWidth()
