@@ -1,4 +1,4 @@
-package com.artishevsky.loginscreenkata
+package com.artishevsky.loginscreenkata.presentation
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme

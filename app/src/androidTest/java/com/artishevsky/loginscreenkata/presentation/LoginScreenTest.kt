@@ -1,12 +1,13 @@
-package com.artishevsky.loginscreenkata
+package com.artishevsky.loginscreenkata.presentation
 
+import com.artishevsky.loginscreenkata.base.BaseAndroidComposeTest
 import org.junit.Test
 
 internal class LoginScreenTest: BaseAndroidComposeTest() {
 
     @Test
     fun testLoginScreenIsDisplayed() {
-        loginScreenRobot {
+        loginScreen {
             isWelcomeLabelDisplayed()
         }
     }

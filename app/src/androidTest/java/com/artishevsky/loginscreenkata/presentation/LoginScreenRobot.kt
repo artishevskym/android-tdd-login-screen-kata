@@ -1,7 +1,9 @@
-package com.artishevsky.loginscreenkata
+package com.artishevsky.loginscreenkata.presentation
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasText
+import com.artishevsky.loginscreenkata.base.BaseAndroidComposeTest
+import com.artishevsky.loginscreenkata.base.BaseScreenRobot
 
 internal class LoginScreenRobot(
     baseAndroidComposeTest: BaseAndroidComposeTest
@@ -12,6 +14,6 @@ internal class LoginScreenRobot(
     fun isWelcomeLabelDisplayed() = welcomeLabel.assertIsDisplayed()
 }
 
-internal fun BaseAndroidComposeTest.loginScreenRobot(
+internal fun BaseAndroidComposeTest.loginScreen(
     func: LoginScreenRobot.() -> Unit
 ) = LoginScreenRobot(this).apply(func)

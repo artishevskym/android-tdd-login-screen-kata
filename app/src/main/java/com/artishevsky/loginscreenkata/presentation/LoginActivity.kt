@@ -1,10 +1,10 @@
-package com.artishevsky.loginscreenkata
+package com.artishevsky.loginscreenkata.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 
-class MainActivity : ComponentActivity() {
+class LoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

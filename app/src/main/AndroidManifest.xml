@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginScreenKata">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.LoginScreenKata">
             <intent-filter>
