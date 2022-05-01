@@ -8,7 +8,6 @@ internal class LoginScreenTest: BaseAndroidComposeTest() {
     @Test
     fun testLoginScreenIsDisplayed() {
         loginScreen {
-            isWelcomeLabelDisplayed()
             isEmailInputDisplayed()
             isPasswordInputDisplayed()
         }

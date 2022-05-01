@@ -12,11 +12,8 @@ internal class LoginScreenRobot(
     baseAndroidComposeTest: BaseAndroidComposeTest
 ) : BaseScreenRobot(baseAndroidComposeTest.composeTestRule) {
 
-    private val welcomeLabel by lazy { composeTestRule.onNode(hasText("Hello Android!")) }
     private val emailInput by lazy { composeTestRule.onNodeWithTag("emailTextField") }
     private val passwordInput by lazy { composeTestRule.onNodeWithTag("passwordTextField") }
-
-    fun isWelcomeLabelDisplayed() = welcomeLabel.assertIsDisplayed()
 
     fun isEmailInputDisplayed() = emailInput
         .assertIsDisplayed()

@@ -3,7 +3,6 @@ package com.artishevsky.loginscreenkata.presentation
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -28,7 +27,6 @@ fun LoginScreen() {
                     .padding(32.dp),
                 verticalArrangement = Arrangement.Center
             ) {
-                Greeting("Android")
                 TextField(
                     value = stringResource(R.string.login_email_input_text),
                     onValueChange = {},
@@ -47,11 +45,6 @@ fun LoginScreen() {
             }
         }
     }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
 }
 
 @Preview(showBackground = true)
