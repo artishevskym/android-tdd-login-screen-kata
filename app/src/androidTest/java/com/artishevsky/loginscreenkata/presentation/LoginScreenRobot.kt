@@ -1,5 +1,6 @@
 package com.artishevsky.loginscreenkata.presentation
 
+import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.onNodeWithTag
@@ -14,7 +15,9 @@ internal class LoginScreenRobot(
     private val emailInput by lazy { composeTestRule.onNodeWithTag("emailTextField") }
 
     fun isWelcomeLabelDisplayed() = welcomeLabel.assertIsDisplayed()
+
     fun isEmailInputDisplayed() = emailInput.assertIsDisplayed()
+        .assert(hasText("Email"))
 }
 
 internal fun BaseAndroidComposeTest.loginScreen(

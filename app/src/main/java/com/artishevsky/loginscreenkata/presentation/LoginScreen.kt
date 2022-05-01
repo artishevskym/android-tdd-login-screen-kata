@@ -22,7 +22,7 @@ fun LoginScreen() {
         ) {
             Greeting("Android")
             TextField(
-                value = "Email",
+                value = "lorem",
                 onValueChange = {},
                 modifier = Modifier
                     .fillMaxWidth()
