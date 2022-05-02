@@ -3,4 +3,5 @@
     <string name="login_email_input_text">Email</string>
     <string name="login_password_input_text">Password</string>
     <string name="login_repeat_password_input_text">Repeat password</string>
+    <string name="login_accept_terms_text">Accept terms</string>
 </resources>

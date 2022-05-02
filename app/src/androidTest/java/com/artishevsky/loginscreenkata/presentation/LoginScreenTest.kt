@@ -11,6 +11,7 @@ internal class LoginScreenTest: BaseAndroidComposeTest() {
             isEmailInputDisplayed()
             isPasswordInputDisplayed()
             isRepeatPasswordInputDisplayed()
+            isAcceptTermsInputDisplayed()
         }
     }
 

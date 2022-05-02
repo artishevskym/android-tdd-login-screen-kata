@@ -7,6 +7,8 @@ import androidx.compose.ui.test.onNodeWithTag
 import com.artishevsky.loginscreenkata.R
 import com.artishevsky.loginscreenkata.base.BaseAndroidComposeTest
 import com.artishevsky.loginscreenkata.base.BaseScreenRobot
+import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.ACCEPT_TERMS_CHECKBOX_TAG
+import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.ACCEPT_TERMS_TEXT_TAG
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.EMAIL_TEXT_FIELD_TAG
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.PASSWORD_TEXT_FIELD_TAG
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.REPEAT_PASSWORD_TEXT_FIELD_TAG
@@ -21,6 +23,10 @@ internal class LoginScreenRobot(
             by lazy { composeTestRule.onNodeWithTag(PASSWORD_TEXT_FIELD_TAG) }
     private val repeatPasswordInput
             by lazy { composeTestRule.onNodeWithTag(REPEAT_PASSWORD_TEXT_FIELD_TAG) }
+    private val acceptTermsCheckbox
+            by lazy { composeTestRule.onNodeWithTag(ACCEPT_TERMS_CHECKBOX_TAG) }
+    private val acceptTermsText
+            by lazy { composeTestRule.onNodeWithTag(ACCEPT_TERMS_TEXT_TAG) }
 
     fun isEmailInputDisplayed() = emailInput
         .assertIsDisplayed()
@@ -33,6 +39,14 @@ internal class LoginScreenRobot(
     fun isRepeatPasswordInputDisplayed() = repeatPasswordInput
         .assertIsDisplayed()
         .assert(hasText(getString(R.string.login_repeat_password_input_text)))
+
+    fun isAcceptTermsInputDisplayed() = acceptTermsCheckbox
+        .assertIsDisplayed()
+        .also {
+            acceptTermsText
+                .assertIsDisplayed()
+                .assert(hasText(getString(R.string.login_accept_terms_text)))
+        }
 }
 
 internal fun BaseAndroidComposeTest.loginScreen(
