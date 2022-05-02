@@ -77,6 +77,7 @@ internal object LoginScreenElement {
     const val REPEAT_PASSWORD_TEXT_FIELD_TAG = "repeatPasswordTextField"
     const val ACCEPT_TERMS_CHECKBOX_TAG = "acceptTermsCheckbox"
     const val ACCEPT_TERMS_TEXT_TAG = "acceptTermsText"
+    const val SUBMIT_BUTTON_TAG = "submitButton"
 }
 
 @Preview(showBackground = true)

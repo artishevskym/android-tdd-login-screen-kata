@@ -12,6 +12,7 @@ import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.ACCEPT_TE
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.EMAIL_TEXT_FIELD_TAG
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.PASSWORD_TEXT_FIELD_TAG
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.REPEAT_PASSWORD_TEXT_FIELD_TAG
+import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.SUBMIT_BUTTON_TAG
 
 internal class LoginScreenRobot(
     baseAndroidComposeTest: BaseAndroidComposeTest
@@ -27,6 +28,8 @@ internal class LoginScreenRobot(
             by lazy { composeTestRule.onNodeWithTag(ACCEPT_TERMS_CHECKBOX_TAG) }
     private val acceptTermsText
             by lazy { composeTestRule.onNodeWithTag(ACCEPT_TERMS_TEXT_TAG) }
+    private val submitButton
+            by lazy { composeTestRule.onNodeWithTag(SUBMIT_BUTTON_TAG) }
 
     fun isEmailInputDisplayed() = emailInput
         .assertIsDisplayed()
@@ -47,6 +50,10 @@ internal class LoginScreenRobot(
                 .assertIsDisplayed()
                 .assert(hasText(getString(R.string.login_accept_terms_text)))
         }
+
+    fun isSubmitButtonDisplayed() = submitButton
+        .assertIsDisplayed()
+        .assert(hasText(getString(R.string.login_submit_button_text)))
 }
 
 internal fun BaseAndroidComposeTest.loginScreen(
