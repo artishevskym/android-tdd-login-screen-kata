@@ -1,9 +1,7 @@
 package com.artishevsky.loginscreenkata.presentation
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.TextField
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
@@ -11,6 +9,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.artishevsky.loginscreenkata.R
+import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.ACCEPT_TERMS_CHECKBOX_TAG
+import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.ACCEPT_TERMS_TEXT_TAG
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.EMAIL_TEXT_FIELD_TAG
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.PASSWORD_TEXT_FIELD_TAG
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.REPEAT_PASSWORD_TEXT_FIELD_TAG
@@ -53,6 +53,19 @@ fun LoginScreen() {
                         .fillMaxWidth()
                         .testTag(REPEAT_PASSWORD_TEXT_FIELD_TAG)
                 )
+                Spacer(modifier = Modifier.height(16.dp))
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    Checkbox(
+                        checked = false,
+                        onCheckedChange = {},
+                        modifier = Modifier.testTag(ACCEPT_TERMS_CHECKBOX_TAG)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        text = stringResource(R.string.login_accept_terms_text),
+                        modifier = Modifier.testTag(ACCEPT_TERMS_TEXT_TAG)
+                    )
+                }
             }
         }
     }
