@@ -14,6 +14,7 @@ import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.ACCEPT_TE
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.EMAIL_TEXT_FIELD_TAG
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.PASSWORD_TEXT_FIELD_TAG
 import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.REPEAT_PASSWORD_TEXT_FIELD_TAG
+import com.artishevsky.loginscreenkata.presentation.LoginScreenElement.SUBMIT_BUTTON_TAG
 import com.artishevsky.loginscreenkata.ui.theme.LoginScreenKataTheme
 
 @Composable
@@ -65,6 +66,12 @@ fun LoginScreen() {
                         text = stringResource(R.string.login_accept_terms_text),
                         modifier = Modifier.testTag(ACCEPT_TERMS_TEXT_TAG)
                     )
+                }
+                Button(
+                    onClick = {},
+                    modifier = Modifier.testTag(SUBMIT_BUTTON_TAG)
+                ) {
+                    Text(text = stringResource(R.string.login_submit_button_text))
                 }
             }
         }
