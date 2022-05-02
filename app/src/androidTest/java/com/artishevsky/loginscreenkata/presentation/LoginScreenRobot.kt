@@ -54,6 +54,30 @@ internal class LoginScreenRobot(
     fun isSubmitButtonDisplayed() = submitButton
         .assertIsDisplayed()
         .assert(hasText(getString(R.string.login_submit_button_text)))
+
+    fun isSubmitEnabled(enabled: Boolean) {
+        TODO("Not yet implemented")
+    }
+
+    fun typeEmail(email: String) {
+        TODO("Not yet implemented")
+    }
+
+    fun typePassword(password: String) {
+        TODO("Not yet implemented")
+    }
+
+    fun confirmPassword(password: String) {
+        TODO("Not yet implemented")
+    }
+
+    fun acceptTerms() {
+        TODO("Not yet implemented")
+    }
+
+    fun submit() {
+        TODO("Not yet implemented")
+    }
 }
 
 internal fun BaseAndroidComposeTest.loginScreen(

@@ -16,4 +16,20 @@ internal class LoginScreenTest: BaseAndroidComposeTest() {
         }
     }
 
+    @Test
+    fun testUserCanLoginSuccessfully() {
+        loginScreen {
+            isSubmitEnabled(false)
+
+            typeEmail("android@gmail.com")
+            typePassword("pass1234")
+            confirmPassword("pass1234")
+            acceptTerms()
+
+            isSubmitEnabled(true)
+
+            submit()
+        }
+    }
+
 }
