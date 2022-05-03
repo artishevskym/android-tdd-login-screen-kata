@@ -1,9 +1,6 @@
 package com.artishevsky.loginscreenkata.presentation
 
-import androidx.compose.ui.test.assert
-import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.hasText
-import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.*
 import com.artishevsky.loginscreenkata.R
 import com.artishevsky.loginscreenkata.base.BaseAndroidComposeTest
 import com.artishevsky.loginscreenkata.base.BaseScreenRobot
@@ -30,6 +27,8 @@ internal class LoginScreenRobot(
             by lazy { composeTestRule.onNodeWithTag(ACCEPT_TERMS_TEXT_TAG) }
     private val submitButton
             by lazy { composeTestRule.onNodeWithTag(SUBMIT_BUTTON_TAG) }
+    private val formSubmittedText
+            by lazy { composeTestRule.onNodeWithText(getString(R.string.login_form_submitted_text)) }
 
     fun isEmailInputDisplayed() = emailInput
         .assertIsDisplayed()
@@ -55,29 +54,26 @@ internal class LoginScreenRobot(
         .assertIsDisplayed()
         .assert(hasText(getString(R.string.login_submit_button_text)))
 
-    fun isSubmitEnabled(enabled: Boolean) {
-        TODO("Not yet implemented")
-    }
+    fun isSubmitEnabled(enabled: Boolean) = submitButton.assert(
+        if (enabled) isEnabled() else isNotEnabled()
+    )
 
-    fun typeEmail(email: String) {
-        TODO("Not yet implemented")
-    }
+    fun typeEmail(email: String) = emailInput.performTextReplacement(email)
 
-    fun typePassword(password: String) {
-        TODO("Not yet implemented")
-    }
+    fun typePassword(password: String) = passwordInput.performTextReplacement(password)
 
-    fun confirmPassword(password: String) {
-        TODO("Not yet implemented")
-    }
+    fun confirmPassword(password: String) = repeatPasswordInput.performTextReplacement(password)
 
-    fun acceptTerms() {
-        TODO("Not yet implemented")
-    }
+    fun acceptTerms() = acceptTermsCheckbox.performClick()
 
-    fun submit() {
-        TODO("Not yet implemented")
-    }
+    fun submit() = submitButton.performClick()
+    fun isEmailTextDisplayed(email: String) = emailInput.assertTextEquals(email)
+    fun isPasswordTextDisplayed(password: String) = passwordInput.assertTextEquals(password)
+    fun isConfirmPasswordTextDisplayed(password: String) =
+        repeatPasswordInput.assertTextEquals(password)
+
+    fun isAcceptTermsChecked() = acceptTermsCheckbox.assertIsOn()
+    fun isFormSubmittedTextDisplayed() = formSubmittedText.assertIsDisplayed()
 }
 
 internal fun BaseAndroidComposeTest.loginScreen(

@@ -21,15 +21,27 @@ internal class LoginScreenTest: BaseAndroidComposeTest() {
         loginScreen {
             isSubmitEnabled(false)
 
-            typeEmail("android@gmail.com")
-            typePassword("pass1234")
-            confirmPassword("pass1234")
+            typeEmail(USER_EMAIL)
+            isEmailTextDisplayed(USER_EMAIL)
+
+            typePassword(USER_PASSWORD)
+            isPasswordTextDisplayed(USER_PASSWORD)
+
+            confirmPassword(USER_PASSWORD)
+            isConfirmPasswordTextDisplayed(USER_PASSWORD)
+
             acceptTerms()
+            isAcceptTermsChecked()
 
             isSubmitEnabled(true)
 
             submit()
+            isFormSubmittedTextDisplayed()
         }
     }
 
+    private companion object TestData {
+        private const val USER_EMAIL = "android@gmail.com"
+        private const val USER_PASSWORD = "pass1234!"
+    }
 }
