@@ -5,5 +5,5 @@
     <string name="login_repeat_password_input_text">Repeat password</string>
     <string name="login_accept_terms_text">Accept terms</string>
     <string name="login_submit_button_text">Submit</string>
-    <string name="login_form_submitted_text">Login form submitted!</string>
+    <string name="login_result_success_text">Login completed successfully!</string>
 </resources>

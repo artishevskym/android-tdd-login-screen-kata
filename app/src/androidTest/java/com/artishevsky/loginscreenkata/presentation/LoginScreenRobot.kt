@@ -27,8 +27,8 @@ internal class LoginScreenRobot(
             by lazy { composeTestRule.onNodeWithTag(ACCEPT_TERMS_TEXT_TAG) }
     private val submitButton
             by lazy { composeTestRule.onNodeWithTag(SUBMIT_BUTTON_TAG) }
-    private val formSubmittedText
-            by lazy { composeTestRule.onNodeWithText(getString(R.string.login_form_submitted_text)) }
+    private val loginResultText
+            by lazy { composeTestRule.onNodeWithText(getString(R.string.login_result_success_text)) }
 
     fun isEmailInputDisplayed() = emailInput
         .assertIsDisplayed()
@@ -54,7 +54,7 @@ internal class LoginScreenRobot(
         .assertIsDisplayed()
         .assert(hasText(getString(R.string.login_submit_button_text)))
 
-    fun isSubmitEnabled(enabled: Boolean) = submitButton.assert(
+    fun isSubmitButtonEnabled(enabled: Boolean) = submitButton.assert(
         if (enabled) isEnabled() else isNotEnabled()
     )
 
@@ -62,18 +62,18 @@ internal class LoginScreenRobot(
 
     fun typePassword(password: String) = passwordInput.performTextReplacement(password)
 
-    fun confirmPassword(password: String) = repeatPasswordInput.performTextReplacement(password)
+    fun typeRepeatPassword(password: String) = repeatPasswordInput.performTextReplacement(password)
 
-    fun acceptTerms() = acceptTermsCheckbox.performClick()
+    fun clickAcceptTerms() = acceptTermsCheckbox.performClick()
 
-    fun submit() = submitButton.performClick()
-    fun isEmailTextDisplayed(email: String) = emailInput.assertTextEquals(email)
-    fun isPasswordTextDisplayed(password: String) = passwordInput.assertTextEquals(password)
-    fun isConfirmPasswordTextDisplayed(password: String) =
+    fun clickSubmitButton() = submitButton.performClick()
+    fun verifyEmail(email: String) = emailInput.assertTextEquals(email)
+    fun verifyPassword(password: String) = passwordInput.assertTextEquals(password)
+    fun verifyRepeatPassword(password: String) =
         repeatPasswordInput.assertTextEquals(password)
 
-    fun isAcceptTermsChecked() = acceptTermsCheckbox.assertIsOn()
-    fun isFormSubmittedTextDisplayed() = formSubmittedText.assertIsDisplayed()
+    fun verifyAcceptTermsChecked() = acceptTermsCheckbox.assertIsOn()
+    fun verifyLoginSuccessfully() = loginResultText.assertIsDisplayed()
 }
 
 internal fun BaseAndroidComposeTest.loginScreen(

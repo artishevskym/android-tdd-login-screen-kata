@@ -89,7 +89,7 @@ fun LoginScreen() {
                     Text(text = stringResource(R.string.login_submit_button_text))
                 }
                 if (formSubmittedState) {
-                    Text(text = stringResource(R.string.login_form_submitted_text))
+                    Text(text = stringResource(R.string.login_result_success_text))
                 }
             }
         }
