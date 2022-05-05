@@ -19,21 +19,19 @@ internal class LoginScreenTest: BaseAndroidComposeTest() {
     @Test
     fun testUserCanLoginSuccessfully() {
         loginScreen {
-            isSubmitButtonEnabled(false)
-
             typeEmail(USER_EMAIL)
             verifyEmail(USER_EMAIL)
 
             typePassword(USER_PASSWORD)
+            clickPasswordVisibilityIcon()
             verifyPassword(USER_PASSWORD)
 
             typeRepeatPassword(USER_PASSWORD)
+            clickRepeatPasswordVisibilityIcon()
             verifyRepeatPassword(USER_PASSWORD)
 
             clickAcceptTerms()
             verifyAcceptTermsChecked()
-
-            isSubmitButtonEnabled(true)
 
             clickSubmitButton()
             verifyLoginSuccessfully()
